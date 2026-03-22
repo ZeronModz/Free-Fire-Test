@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Teko:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Orbitron", sans-serif;
+  --font-ff: "Teko", sans-serif;
+  --color-ff-yellow: #ffcc00;
+  --color-ff-orange: #ff6b00;
+  --color-ff-dark: #0a0a0a;
+  --color-ff-gray: #1a1a1a;
+  --color-ff-red: #ff0000;
+}
+
+@layer base {
+  body {
+    @apply bg-ff-dark text-white font-sans;
+  }
+}
+
+.ff-glow {
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.5), 0 0 20px rgba(255, 204, 0, 0.3);
+}
+
+.ff-border-glow {
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
+}
+
+.ff-trapezoid {
+  clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+.ff-parallelogram {
+  clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+}
+
+.ff-card-clip {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
+}
+
+.ff-grid-bg {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.glass-card {
+  background: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ff-button {
+  @apply relative overflow-hidden transition-all duration-300;
+  clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+.ff-button:hover {
+  @apply scale-105;
+  filter: brightness(1.2);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
